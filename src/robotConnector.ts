@@ -1,14 +1,14 @@
 const BOOST_HUB_SERVICE_UUID = '00001623-1212-efde-1623-785feabcd123';
 const BOOST_CHARACTERISTIC_UUID = '00001624-1212-efde-1623-785feabcd123';
 
-export class BoostConnector {
+export class RobotConnector {
   private static device: BluetoothDevice;
 
   public static isWebBluetoothSupported : boolean =  navigator.bluetooth ? true : false;
   
   public static async connect(disconnectCallback: () => Promise<void>): Promise<BluetoothRemoteGATTCharacteristic> {
     const options = {
-      acceptAllDevices: true,
+      acceptAllDevices: false,
       filters: [{ services: [BOOST_HUB_SERVICE_UUID] }],
       optionalServices: [BOOST_HUB_SERVICE_UUID],
     };
@@ -26,7 +26,7 @@ export class BoostConnector {
     //   console.log(event.rssi);
     // });
 
-    return BoostConnector.getCharacteristic(this.device);
+    return RobotConnector.getCharacteristic(this.device);
   }
 
   private static async getCharacteristic(device: BluetoothDevice): Promise<BluetoothRemoteGATTCharacteristic> {
@@ -37,7 +37,7 @@ export class BoostConnector {
 
   public static async reconnect(): Promise<[boolean, BluetoothRemoteGATTCharacteristic]> {
     if (this.device) {
-      const bluetooth = await BoostConnector.getCharacteristic(this.device);
+      const bluetooth = await RobotConnector.getCharacteristic(this.device);
       return [true, bluetooth];
     }
     return [false, null];

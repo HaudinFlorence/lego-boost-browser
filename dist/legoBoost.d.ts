@@ -9,7 +9,7 @@ export default class LegoBoost {
     private logDebug;
     /**
      * Information from Lego Boost motors and sensors
-     * @property LegoBoost#deviceInfo
+     * @property LegoBoost#deviceInfoBoostConnector
      */
     deviceInfo: DeviceInfo;
     /**

@@ -14,7 +14,7 @@ export default class LegoBoost {
 
   /**
    * Information from Lego Boost motors and sensors
-   * @property LegoBoost#deviceInfo
+   * @property LegoBoost#deviceInfoBoostConnector
    */
   public deviceInfo: DeviceInfo = {
     ports: {

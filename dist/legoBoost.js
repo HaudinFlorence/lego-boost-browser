@@ -44,7 +44,7 @@ var LegoBoost = /** @class */ (function () {
         this.logDebug = function (s) { };
         /**
          * Information from Lego Boost motors and sensors
-         * @property LegoBoost#deviceInfo
+         * @property LegoBoost#deviceInfoBoostConnector
          */
         this.deviceInfo = {
             ports: {
