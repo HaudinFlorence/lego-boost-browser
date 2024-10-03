@@ -64,7 +64,7 @@ export default class LegoBoost {
     }
   }
 
-  private async initHub(bluetooth: BluetoothRemoteGATTCharacteristic, configuration: BoostConfiguration) {
+  async initHub(bluetooth: BluetoothRemoteGATTCharacteristic, configuration: BoostConfiguration) {
     this.hub = new HubAsync(bluetooth, configuration);
     this.hub.logDebug = this.logDebug;
 
